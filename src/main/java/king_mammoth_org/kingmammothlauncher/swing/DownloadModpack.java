@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import java.awt.Desktop;
+import java.awt.Dimension;
 
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
@@ -71,7 +72,7 @@ public class DownloadModpack {
 		frmDownloadKingMammoth = new JFrame();
 		frmDownloadKingMammoth.setIconImage(Toolkit.getDefaultToolkit().getImage(DownloadModpack.class.getResource("/king_mammoth_org/kingmammothlauncher/swing/launcher.png")));
 		frmDownloadKingMammoth.setTitle("Download King Mammoth");
-		frmDownloadKingMammoth.setBounds(100, 100, 450, 300);
+		frmDownloadKingMammoth.setBounds(100, 100, 440, 450);
 		frmDownloadKingMammoth.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frmDownloadKingMammoth.getContentPane().setLayout(null);
 		frmDownloadKingMammoth.setResizable(false);
@@ -139,15 +140,17 @@ public class DownloadModpack {
 		}
 
 		final JList<String> list = new JList<String>(model);
+		list.setFont(new Font("SansSerif", Font.BOLD, 11));
 		list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		list.setToolTipText("Choose Modpack Version");
 		list.setBounds(10, 150, 414, 23);
 		JScrollPane scrollPane = new JScrollPane(list);
-		scrollPane.setBounds(10, 147, 414, 26);
+		scrollPane.setBounds(10, 147, 414, 195);
+		scrollPane.setPreferredSize(new Dimension(414, 200));
 		frmDownloadKingMammoth.getContentPane().add(scrollPane);
 
 		JSeparator separator_3 = new JSeparator();
-		separator_3.setBounds(10, 184, 414, 2);
+		separator_3.setBounds(10, 350, 414, 2);
 		frmDownloadKingMammoth.getContentPane().add(separator_3);
 
 		JButton btnNewButton = new JButton("Download");
@@ -188,7 +191,7 @@ public class DownloadModpack {
 		});
 		btnNewButton.setBackground(Color.LIGHT_GRAY);
 		btnNewButton.setFocusable(false);
-		btnNewButton.setBounds(10, 203, 131, 47);
+		btnNewButton.setBounds(10, 363, 131, 47);
 		frmDownloadKingMammoth.getContentPane().add(btnNewButton);
 
 		JButton btnCancel = new JButton("Cancel");
@@ -202,7 +205,7 @@ public class DownloadModpack {
 				System.exit(0);
 			}
 		});
-		btnCancel.setBounds(293, 203, 131, 47);
+		btnCancel.setBounds(292, 363, 131, 47);
 		frmDownloadKingMammoth.getContentPane().add(btnCancel);
 
 		JButton btnSupportUs = new JButton("  Support Us");
@@ -236,7 +239,7 @@ public class DownloadModpack {
 		});
 		btnSupportUs.setIcon(new ImageIcon(
 				DownloadModpack.class.getResource("/king_mammoth_org/kingmammothlauncher/swing/patreon.png")));
-		btnSupportUs.setBounds(151, 203, 131, 47);
+		btnSupportUs.setBounds(151, 363, 131, 47);
 		frmDownloadKingMammoth.getContentPane().add(btnSupportUs);
 
 		JButton btnNewButton_1 = new JButton("Choose File");
